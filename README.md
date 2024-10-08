@@ -1,5 +1,7 @@
 ### Inspired by js13k games. Simple tower defense with zero dependencies (local/dev doesn't count).
 
+![game image](./assets/image.png)
+
 ### How to run:
 ```
 npm ci
