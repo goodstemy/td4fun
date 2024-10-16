@@ -3,6 +3,7 @@ import { lenOfVec, randomBetween } from '../utils';
 
 export default class Enemy {
   health = 3;
+  color = 'black';
   x = 0;
   y = 30;
   width = 15;
@@ -26,10 +27,26 @@ export default class Enemy {
     }
   }
 
+  update() {
+    switch(this.health) {
+      case 1:
+        this.color = 'red';
+        break;
+      case 2:
+        this.color = 'yellow';
+        break;
+      case 3:
+      default:
+        this.color = 'black';
+    }
+  }
+
   draw(ctx, dt) {
     if (this.deleted) return;
 
-    ctx.fillStyle = 'black';
+    this.update();
+
+    ctx.fillStyle = this.color;
 
     this.x = this.x + (this.targetX - this.x) / lenOfVec(this.targetX, this.x, this.targetY, this.y) * this.speed * dt;
     

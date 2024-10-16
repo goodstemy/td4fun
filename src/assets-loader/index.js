@@ -38,11 +38,13 @@ const boomImgs = [
 
 export default new class AssetsLoader {
   boomAssets = [];
+  musicPlaying = false;
   boomAssetsLoadingProgress = 0;
   boomAssetsTotal = boomImgs.length;
 
   load() {
     this.loadBoom();
+    this.loadMusic();
   }
 
   loadBoom() {
@@ -63,5 +65,27 @@ export default new class AssetsLoader {
 
       img.src = url;
     }
+  }
+
+  loadMusic() {
+    const url = new URL('../../music/menu-music.mp3', import.meta.url);
+    const menuMusicAudio = new Audio(url);
+    const menuMusicElement = document.getElementById('music');
+
+    menuMusicAudio.loop = true;
+
+    menuMusicElement.addEventListener('click', () => {
+      if (this.musicPlaying) {
+        menuMusicAudio.pause();
+        menuMusicAudio.currentTime = 0;
+        menuMusicElement.innerHTML = 'Music OFF';
+        this.musicPlaying = false;
+        return;
+      }
+
+      menuMusicAudio.play();
+      menuMusicElement.innerHTML = 'Music ON';
+      this.musicPlaying = true;
+    });
   }
 }

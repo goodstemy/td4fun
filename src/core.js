@@ -135,41 +135,6 @@ class Core {
 
         this.explosions.push(boom);
       }
-      // console.log(D);
-
-      // if (enemy.deleted) {
-      //   const boom = new Boom();
-
-      //   boom.make(bulletX, bulletY);
-      //   bullet.destroy();
-      //   // bullet.enemy = this.enemies[0];
-      //   this.explosions.push(boom);
-      //   continue;
-      // }
-
-      // if (enemy.x < 0)
-
-      // if (bulletX >= enemy.x && bulletY <= 30 + enemy.height) {
-      //   const boom = new Boom();
-
-      //   boom.make(bulletX, bulletY);
-      //   bullet.destroy();
-      //   enemy.takeDamage(damage);
-
-      //   this.explosions.push(boom);
-      // }
-
-      // if (bullet.deleted) continue;
-
-      // if (bulletY <= 30) {
-      //   const boom = new Boom();
-
-      //   boom.make(bulletX, bulletY);
-      //   bullet.destroy();
-      //   enemy.takeDamage(damage);
-
-      //   this.explosions.push(boom);
-      // }
     }
   }
 
