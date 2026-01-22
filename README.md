@@ -1,4 +1,4 @@
-### Inspired by js13k games. Simple tower defense with zero dependencies (local/dev doesn't count).
+### Inspired by js13k games. Simple tower defense with zero dependencies.
 
 ![game image](./assets/image.png)
 
